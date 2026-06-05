@@ -5,288 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Der Klimabeichtstuhl</title>
 <style>
-:root{
-  --bg:#f6f0e6;
-  --card:#fffaf2;
-  --accent:#6f8f54;
-  --accent-dark:#3f5f35;
-  --gold:#c6a15b;
-  --text:#2e2a24;
-  --muted:#6f675c;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: Georgia, "Times New Roman", serif;
-  background:
-    radial-gradient(circle at top left, #fff8dd 0, transparent 35%),
-    linear-gradient(135deg,#f7efd9,#e8f0df);
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-}
-.app{
-  width:100%;
-  max-width:820px;
-  background:rgba(255,250,242,.94);
-  border:1px solid rgba(198,161,91,.45);
-  border-radius:28px;
-  box-shadow:0 18px 50px rgba(84,70,44,.18);
-  overflow:hidden;
-}
-.header{
-  background:linear-gradient(135deg,#faf3df,#dfead5);
-  padding:34px 30px 24px;
-  text-align:center;
-  border-bottom:1px solid rgba(198,161,91,.35);
-}
-.icon{
-  width:58px;height:58px;
-  margin:0 auto 12px;
-  border-radius:50%;
-  border:2px solid var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-size:30px;
-  background:#fffaf0;
-}
-h1{
-  margin:0;
-  font-size:42px;
-  letter-spacing:.04em;
-  font-weight:500;
-}
-.subtitle{
-  margin:10px auto 0;
-  max-width:620px;
-  color:var(--muted);
-  font-size:17px;
-}
-.content{
-  padding:34px;
-}
-.start p,.result p{
-  font-size:19px;
-  text-align:center;
-}
-.progress{
-  height:9px;
-  background:#e5dccb;
-  border-radius:99px;
-  overflow:hidden;
-  margin-bottom:26px;
-}
-.bar{
-  height:100%;
-  background:linear-gradient(90deg,var(--accent),#b7c879);
-  width:0%;
-  transition:.3s;
-}
-.question-number{
-  text-align:center;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:13px;
-  margin-bottom:12px;
-}
-.question{
-  text-align:center;
-  font-size:30px;
-  line-height:1.25;
-  margin:0 0 26px;
-  font-weight:500;
-}
-.options{
-  display:grid;
-  gap:12px;
-}
-button{
-  font-family:inherit;
-  border:none;
-  cursor:pointer;
-}
-.option{
-  text-align:left;
-  padding:16px 18px;
-  font-size:18px;
-  background:#fffdf8;
-  border:1px solid #ddd1bb;
-  border-radius:16px;
-  color:var(--text);
-  transition:.15s;
-}
-.option:hover{
-  background:#edf4e7;
-  border-color:var(--accent);
-  transform:translateY(-1px);
-}
-.primary{
-  display:block;
-  margin:30px auto 0;
-  padding:15px 30px;
-  min-width:220px;
-  border-radius:999px;
-  background:var(--accent);
-  color:white;
-  font-size:18px;
-  box-shadow:0 8px 20px rgba(63,95,53,.22);
-}
-.primary:hover{background:var(--accent-dark)}
-.note{
-  margin-top:28px;
-  font-size:14px;
-  color:var(--muted);
-  text-align:center;
-}
-.absolution{
-  margin:28px auto;
-  padding:24px;
-  max-width:560px;
-  border-radius:22px;
-  background:#eef5e8;
-  border:1px solid #bfd0ac;
-  text-align:center;
-}
-.absolution strong{
-  display:block;
-  font-size:28px;
-  margin-bottom:8px;
-  color:var(--accent-dark);
-}
-.badges{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-.badge{
-  background:#fff7e4;
-  border:1px solid #e2c987;
-  border-radius:999px;
-  padding:8px 12px;
-  color:#6a5522;
-  font-size:14px;
-}
-.footer{
-  background:#f3ead8;
-  padding:16px 22px;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-}
-@media(max-width:600px){
-  h1{font-size:32px}
-  .question{font-size:24px}
-  .content{padding:24px}
-}
+:root{--card:#fffaf2;--accent:#6f8f54;--accent-dark:#3f5f35;--gold:#c6a15b;--text:#2e2a24;--muted:#6f675c;--warning:#8a5b2d}*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:radial-gradient(circle at top left,#fff8dd 0,transparent 35%),linear-gradient(135deg,#f7efd9,#e8f0df);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}.app{width:100%;max-width:880px;background:rgba(255,250,242,.96);border:1px solid rgba(198,161,91,.45);border-radius:30px;box-shadow:0 18px 50px rgba(84,70,44,.18);overflow:hidden}.header{background:linear-gradient(135deg,#faf3df,#dfead5);padding:34px 30px 24px;text-align:center;border-bottom:1px solid rgba(198,161,91,.35)}.icon{width:62px;height:62px;margin:0 auto 12px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:32px;background:#fffaf0}h1{margin:0;font-size:44px;letter-spacing:.04em;font-weight:500}.subtitle{margin:10px auto 0;max-width:650px;color:var(--muted);font-size:17px}.content{padding:34px}.start p,.result p,.confession p{font-size:19px;text-align:center}.progress{height:9px;background:#e5dccb;border-radius:99px;overflow:hidden;margin-bottom:26px}.bar{height:100%;background:linear-gradient(90deg,var(--accent),#b7c879);width:0%;transition:.3s}.question-number{text-align:center;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:13px;margin-bottom:12px}.question{text-align:center;font-size:29px;line-height:1.25;margin:0 0 26px;font-weight:500}.options{display:grid;gap:12px}button{font-family:inherit;border:none;cursor:pointer}.option{text-align:left;padding:16px 18px;font-size:18px;background:#fffdf8;border:1px solid #ddd1bb;border-radius:16px;color:var(--text);transition:.15s}.option:hover{background:#edf4e7;border-color:var(--accent);transform:translateY(-1px)}.primary,.secondary{display:block;margin:24px auto 0;padding:15px 30px;min-width:220px;border-radius:999px;font-size:18px}.primary{background:var(--accent);color:white;box-shadow:0 8px 20px rgba(63,95,53,.22)}.primary:hover{background:var(--accent-dark)}.secondary{background:#fff7e4;color:#6a5522;border:1px solid #e2c987}.note{margin-top:24px;font-size:14px;color:var(--muted);text-align:center}.absolution,.co2box,.counterbox{margin:22px auto;padding:22px;max-width:620px;border-radius:22px;text-align:center}.absolution{background:#eef5e8;border:1px solid #bfd0ac}.absolution strong{display:block;font-size:28px;margin-bottom:8px;color:var(--accent-dark)}.co2box{background:#fff7e4;border:1px solid #e2c987}.co2value{display:block;font-size:36px;color:var(--warning);margin:8px 0}.counterbox{background:#f7f1e6;border:1px solid #ded0b8;color:var(--muted)}.badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.badge{background:#fff7e4;border:1px solid #e2c987;border-radius:999px;padding:8px 12px;color:#6a5522;font-size:14px}input{display:block;width:100%;max-width:540px;margin:18px auto 0;padding:15px 16px;border-radius:14px;border:1px solid #d6c7ac;font-size:18px;font-family:Arial,sans-serif;background:#fffdf8}.smallrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.smallrow button{margin-left:0;margin-right:0}.footer{background:#f3ead8;padding:16px 22px;text-align:center;color:var(--muted);font-size:13px}@media(max-width:600px){body{padding:14px}h1{font-size:32px}.question{font-size:23px}.content{padding:24px}.option{font-size:17px}}
 </style>
 </head>
 <body>
-<div class="app">
-  <div class="header">
-    <div class="icon">🌿</div>
-    <h1>Der Klimabeichtstuhl</h1>
-    <div class="subtitle">Religiöse Metaphern in der Debatte um globale Erwärmung, Mobilität und Nachhaltigkeit</div>
-  </div>
-  <div class="content" id="app"></div>
-  <div class="footer">Ein wissenschaftlich-künstlerisches Projekt — keine religiöse Beichte.</div>
-</div>
-
+<div class="app"><div class="header"><div class="icon">🌿</div><h1>Der Klimabeichtstuhl</h1><div class="subtitle">Religiöse Metaphern in der Debatte um globale Erwärmung, Mobilität und Nachhaltigkeit</div></div><div class="content" id="app"></div><div class="footer">Ein wissenschaftlich-künstlerisches Projekt — keine religiöse Beichte. CO₂e-Werte sind symbolische Näherungen.</div></div>
 <script>
 const questions=[
-{
-text:"Wie oft nutzt du das Auto für kurze Strecken?",
-options:[["Nie – ich gehe zu Fuß oder fahre Rad",0],["Manchmal – aus Bequemlichkeit",1],["Häufig – es ist einfach praktisch",2],["Fast immer – ohne Auto geht es nicht",3]]
-},
-{
-text:"Wie häufig isst du Fleisch oder Wurst?",
-options:[["Nie oder fast nie",0],["Selten",1],["Mehrmals pro Woche",2],["Mehrmals täglich",3]]
-},
-{
-text:"Wie bewusst kaufst du ein?",
-options:[["Ich achte sehr auf Nachhaltigkeit und Herkunft",0],["Ich achte manchmal darauf",1],["Eher selten – andere Dinge sind wichtiger",2],["Ich kaufe, was ich will",3]]
-},
-{
-text:"Wie bewegst du dich im Alltag hauptsächlich fort?",
-options:[["Fahrrad oder zu Fuß",0],["Öffentliche Verkehrsmittel",1],["Eine Mischung aus allem",2],["Meistens Auto oder Motorrad",3]]
-},
-{
-text:"Wie wichtig ist dir Nachhaltigkeit im Alltag?",
-options:[["Leitprinzip meines Handelns",0],["Sehr wichtig",1],["Eher wichtig",2],["Nicht besonders wichtig",3]]
-}
+{section:"Gewissenserforschung",text:"Wie oft denkst du über deinen ökologischen Fußabdruck nach?",options:[["Mehrmals täglich",0,0],["Regelmäßig",1,100],["Gelegentlich",2,250],["Möglichst selten",3,450]]},
+{section:"Gewissenserforschung",text:"Welche ökologische Verfehlung beschäftigt dich am meisten?",options:[["Mobilität",2,450],["Konsum",2,350],["Ernährung",2,300],["Energieverbrauch",2,400],["Keine davon",3,500]]},
+{section:"Versuchung",text:"Wenn du gegen deine Umweltüberzeugungen handelst, was ist meist der Grund?",options:[["Bequemlichkeit",2,350],["Zeitmangel",2,300],["Gewohnheit",2,300],["Kosten",1,180],["Ich sehe keinen Widerspruch",3,500]]},
+{section:"Klimasünden",text:"Welcher Versuchung erliegst du am häufigsten?",options:[["Billigflug",4,1200],["Online-Shopping",2,350],["Autofahrt",3,700],["Fleischgericht",2,450],["Streaming-Marathon",1,120]]},
+{section:"Klimasünden",text:"Wie oft kaufst du Dinge, die du eigentlich nicht brauchst?",options:[["Sehr häufig",3,700],["Gelegentlich",2,400],["Selten",1,150],["Fast nie",0,40]]},
+{section:"Klimasünden",text:"Welche ökologische Sünde erscheint dir gesellschaftlich am meisten akzeptiert?",options:[["Fliegen",3,900],["Autofahren",3,750],["Konsum",2,450],["Lebensmittelverschwendung",2,350],["Energieverschwendung",2,400]]},
+{section:"Schuld und Verantwortung",text:"Wer trägt die größte Verantwortung für die ökologische Krise?",options:[["Ich selbst",1,180],["Die Politik",1,180],["Die Wirtschaft",1,180],["Alle gemeinsam",0,120]]},
+{section:"Schuld und Verantwortung",text:"Glaubst du, individuelles Handeln macht einen Unterschied?",options:[["Ja",0,80],["Eher ja",1,150],["Eher nein",2,300],["Nein",3,500]]},
+{section:"Schuld und Verantwortung",text:"Was wiegt schwerer?",options:[["Individuelle Schuld",1,180],["Strukturelle Probleme",1,180],["Beides gleichermaßen",0,100],["Darüber habe ich noch nie nachgedacht",2,300]]},
+{section:"Umkehr und Buße",text:"Welche Form des Verzichts wäre für dich am leichtesten?",options:[["Weniger Autofahren",1,250],["Weniger Fleisch",1,220],["Weniger Konsum",1,210],["Weniger Flugreisen",1,300]]},
+{section:"Umkehr und Buße",text:"Welche Form des Verzichts wäre für dich am schwersten?",options:[["Autofahren reduzieren",3,700],["Fleisch reduzieren",2,420],["Weniger kaufen",2,380],["Weniger reisen",3,850]]},
+{section:"Hoffnung und Erlösung",text:"Woran glaubst du angesichts der ökologischen Krise?",options:[["Fortschritt",1,180],["Gemeinschaft",0,100],["Innovation",1,180],["Verzicht",0,90],["Ich bin unsicher",2,300]]}
 ];
-
-let current=-1;
-let score=0;
-
-function absolution(s){
- if(s<=3) return ["Eine halbe Stunde Fahrradfahren","Für dich. Für andere. Für die Schöpfung."];
- if(s<=7) return ["5 Mal Treppensteigen","Statt Aufzug oder Rolltreppe."];
- if(s<=10) return ["Ein fleischfreier Tag","Eine kleine Übung in ökologischer Umkehr."];
- return ["Ein Gerät bewusst ausschalten","Und einen Tag lang nichts neu kaufen."];
-}
-
-function renderStart(){
- document.getElementById("app").innerHTML=`
- <div class="start">
-   <p>Lege dein ökologisches Gewissen offen und empfange am Ende eine kleine Bußauflage.</p>
-   <button class="primary" onclick="start()">Beichte beginnen</button>
-   <div class="badges">
-     <span class="badge">ca. 3 Minuten</span>
-     <span class="badge">anklickbar</span>
-     <span class="badge">humorvoll-reflexiv</span>
-   </div>
- </div>`;
-}
-
-function start(){
- current=0;
- score=0;
- renderQuestion();
-}
-
-function renderQuestion(){
- const q=questions[current];
- const percent=((current)/questions.length)*100;
- let html=`
- <div class="progress"><div class="bar" style="width:${percent}%"></div></div>
- <div class="question-number">Frage ${current+1} von ${questions.length}</div>
- <h2 class="question">${q.text}</h2>
- <div class="options">`;
- q.options.forEach(o=>{
-   html+=`<button class="option" onclick="answer(${o[1]})">${o[0]}</button>`;
- });
- html+=`</div>`;
- document.getElementById("app").innerHTML=html;
-}
-
-function answer(points){
- score+=points;
- current++;
- if(current>=questions.length){renderResult();}
- else{renderQuestion();}
-}
-
-function renderResult(){
- const [title,sub]=absolution(score);
- document.getElementById("app").innerHTML=`
- <div class="result">
-   <div class="progress"><div class="bar" style="width:100%"></div></div>
-   <h2 class="question">Deine Absolution</h2>
-   <p>Dein ökologisches Gewissen wurde gehört. Zur Stärkung von Erde, Klima und Mitmenschen erhältst du folgende Bußauflage:</p>
-   <div class="absolution">
-     <strong>${title}</strong>
-     <span>${sub}</span>
-   </div>
-   <button class="primary" onclick="renderStart()">Neu beichten</button>
-   <div class="note">Nicht Perfektion ist gefragt, sondern Richtung.</div>
- </div>`;
-}
-
+let current=-1,score=0,co2=0,confessionText="";
+function getCount(){return Number(localStorage.getItem("klimabeichtstuhl_count")||"0")}function setCount(n){localStorage.setItem("klimabeichtstuhl_count",String(n))}
+function absolution(s,c){if(c<=2500)return["Eine halbe Stunde Fahrradfahren","Für dich. Für andere. Für die Schöpfung."];if(c<=4500)return["5 Mal Treppensteigen","Statt Aufzug oder Rolltreppe."];if(c<=6500)return["Ein fleischfreier Tag","Eine kleine Übung in ökologischer Umkehr."];if(c<=8500)return["Eine Woche ohne unnötige Neuanschaffungen","Eine Bußübung gegen die Versuchung des Sofortkaufs."];return["Ein autofreier Sonntag","Gehe hin in Frieden — aber möglichst zu Fuß, per Rad oder mit der Bahn."]}
+function renderStart(){const count=getCount();document.getElementById("app").innerHTML=`<div class="start"><p>Lege dein ökologisches Gewissen offen und empfange am Ende eine kleine Bußauflage.</p><button class="primary" onclick="start()">Beichte beginnen</button><div class="badges"><span class="badge">3–5 Minuten</span><span class="badge">12 Fragen</span><span class="badge">symbolischer CO₂e-Wert</span></div><div class="counterbox">Bisherige Beichten auf diesem Gerät: <strong>${count}</strong></div></div>`}
+function start(){current=0;score=0;co2=0;confessionText="";renderQuestion()}
+function renderQuestion(){const q=questions[current];const percent=(current/questions.length)*100;let html=`<div class="progress"><div class="bar" style="width:${percent}%"></div></div><div class="question-number">${q.section} · Frage ${current+1} von ${questions.length}</div><h2 class="question">${q.text}</h2><div class="options">`;q.options.forEach(o=>{html+=`<button class="option" onclick="answer(${o[1]},${o[2]})">${o[0]}</button>`});html+=`</div>`;document.getElementById("app").innerHTML=html}
+function answer(points,co2points){score+=points;co2+=co2points;current++;if(current>=questions.length){renderConfession()}else{renderQuestion()}}
+function renderConfession(){document.getElementById("app").innerHTML=`<div class="confession"><div class="progress"><div class="bar" style="width:96%"></div></div><div class="question-number">Optionales Bekenntnis</div><h2 class="question">Welche ökologische Sünde möchtest du heute bekennen?</h2><p>Ein kurzer Satz genügt. Du kannst dieses Feld auch überspringen.</p><input id="confessionInput" maxlength="90" placeholder="z. B. Ich nehme zu oft das Auto."><div class="smallrow"><button class="primary" onclick="finish()">Absolution empfangen</button><button class="secondary" onclick="skipConfession()">Überspringen</button></div><div class="note">Maximal 90 Zeichen. Die Eingabe wird in dieser Demo nicht gespeichert.</div></div>`}
+function skipConfession(){confessionText="";finish()}function finish(){const input=document.getElementById("confessionInput");if(input){confessionText=input.value.trim()}setCount(getCount()+1);renderResult()}
+function renderResult(){const [title,sub]=absolution(score,co2);const count=getCount();const tons=(co2/1000).toFixed(1).replace(".",",");const confessionLine=confessionText?`<p><em>Dein Bekenntnis wurde gehört: „${escapeHtml(confessionText)}“</em></p>`:"";document.getElementById("app").innerHTML=`<div class="result"><div class="progress"><div class="bar" style="width:100%"></div></div><h2 class="question">Deine Absolution</h2>${confessionLine}<div class="co2box"><span>Symbolischer Beichtwert</span><strong class="co2value">ca. ${tons} t CO₂e/Jahr</strong><span>Dieser Wert ist keine exakte Bilanz, sondern eine spielerische Näherung zur Reflexion.</span></div><div class="absolution"><strong>${title}</strong><span>${sub}</span></div><div class="counterbox">Du bist Beichte Nr. <strong>${count}</strong> auf diesem Gerät.</div><button class="primary" onclick="renderStart()">Neue Beichte</button><button class="secondary" onclick="resetCounter()">Zähler zurücksetzen</button><div class="note">Nicht Perfektion ist gefragt, sondern Richtung. Die religiöse Sprache ist Teil des Experiments.</div></div>`}
+function resetCounter(){if(confirm("Lokalen Zähler wirklich zurücksetzen?")){setCount(0);renderStart()}}function escapeHtml(text){return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
 renderStart();
 </script>
 </body>
